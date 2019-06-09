@@ -1,0 +1,41 @@
+﻿@model WebApp.Models.Answer
+@{
+    ViewBag.Title = "Изменение";
+    var question = ViewBag.question;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Tests">Тесты</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-route-id="@question.TestId" asp-controller="Tests">@question.Test.Name</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-controller="Questions" asp-route-id="@Model.QuestionId">Вопрос</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container-fluid">
+    <form asp-action="Edit">
+        <div class="panel panel-primary">
+            <div class="panel-heading">@ViewBag.Title</div>
+            <div class="panel-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Content" class="control-label"></label>
+                    <input asp-for="Content" class="form-control" />
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rightness" class="control-label"></label>
+                    <input asp-for="Rightness" class="form-control" style="width:2%; height:25px;box-shadow:none; -webkit-box-shadow:none" />
+                    <span asp-validation-for="Rightness" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="QuestionId" class="control-label"></label>
+                    <select asp-for="QuestionId" class="form-control" asp-items="ViewBag.QuestionId"></select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Изменить" class="btn btn-primary btn-block" />
+        </div>
+        <a asp-area="Teacher" asp-action="Details" asp-controller="Questions" asp-route-id="@Model.QuestionId" class="btn btn-default btn-block" role="button">Назад</a>
+    </form>
+</div>

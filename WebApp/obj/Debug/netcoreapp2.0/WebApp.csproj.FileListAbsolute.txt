@@ -1,0 +1,33 @@
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.deps.json
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.runtimeconfig.json
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.runtimeconfig.dev.json
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.dll
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.pdb
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.csproj.CoreCompileInputs.cache
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.AssemblyInfoInputs.cache
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.AssemblyInfo.cs
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.dll
+C:\Users\авада кедавра\source\repos\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.pdb
+C:\Nadezhda\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.deps.json
+C:\Nadezhda\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.runtimeconfig.json
+C:\Nadezhda\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.runtimeconfig.dev.json
+C:\Nadezhda\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.dll
+C:\Nadezhda\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.pdb
+C:\Nadezhda\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.csprojResolveAssemblyReference.cache
+C:\Nadezhda\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.csproj.CoreCompileInputs.cache
+C:\Nadezhda\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.AssemblyInfoInputs.cache
+C:\Nadezhda\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.AssemblyInfo.cs
+C:\Nadezhda\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.dll
+C:\Nadezhda\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.pdb
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.deps.json
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.runtimeconfig.json
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.runtimeconfig.dev.json
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.dll
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\bin\Debug\netcoreapp2.0\WebApp.pdb
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.csproj.CoreCompileInputs.cache
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.AssemblyInfoInputs.cache
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.AssemblyInfo.cs
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.dll
+C:\Users\авада кедавра\Documents\Visual Studio 2017\Projects\updated\WebApp\WebApp\obj\Debug\netcoreapp2.0\WebApp.pdb

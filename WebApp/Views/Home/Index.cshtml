@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApp.Models.Course>
+@{
+    ViewData["Title"] = "Learning Resourse";
+}
+
+<div class="container">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h3 style="margin-top:50px; margin-bottom:50px; text-align:center">Интерактивные онлайн-курсы по программированию. Ознакомьтесь с нашими курсами и лекциями.</h3>
+    }
+    else
+    {
+        <h3 style="margin-top:50px; margin-bottom:50px; text-align:center">Интерактивные онлайн-курсы по программированию. Ознакомьтесь с нашими курсами и лекциями. Для прохождения тестов вам нужно зарегистрироваться.</h3>
+    } 
+    <hr style="margin-bottom:30px;" />
+    <div class="row">
+        @foreach (var course in Model)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3 style="height:52px">@course.Name</h3>
+                        <hr />
+                        <p style="height: 150px;">@course.Description</p>
+                        <p><a asp-area="Student" asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id" class="btn btn-primary" role="button">Лекции</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model WebApp.Models.Answer
+@{
+    ViewBag.Title = "Удаление варианта ответа";
+    var question = ViewBag.question;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Tests">Тесты</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-route-id="@question.TestId" asp-controller="Tests">@question.Test.Name</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-route-id="@Model.QuestionId" asp-controller="Questions">Вопрос</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">@ViewBag.Title</div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Содержание</th>
+                    <td>@Model.Content</td>
+                </tr>
+                <tr>
+                    <th scope="row">Правильность</th>
+                    <td>@Model.Rightness</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form asp-action="Delete" method="post">
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="Удалить" />
+        </div>
+        <a asp-area="Teacher" asp-action="Details" asp-controller="Questions" asp-route-id="@Model.QuestionId" class="btn btn-default btn-block" role="button">Назад</a>
+    </form>
+</div>

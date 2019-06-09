@@ -1,0 +1,30 @@
+﻿@model WebApp.Models.Lecture
+@{
+    ViewBag.Title = "Подробная информация";
+    var Lecture = ViewBag.Lectures;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li><a asp-area="Student" asp-action="Index" asp-controller="Courses">Курсы</a></li>
+    }
+    
+    <li><a asp-area="Student" asp-action="Details" asp-route-id="@Model.CourseId" asp-controller="Courses">@Model.Course.Name</a></li>
+</ol>
+
+<div class="container">
+    <h3 style="text-align:center">@Model.Name</h3>
+    <hr style="margin-bottom:30px;" />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail">
+                <div class="caption">
+                    <p>@Lecture.Content</p>
+                    <p><a asp-area="Student" asp-action="Details" asp-route-id="@Model.CourseId" asp-controller="Courses" class="btn btn-primary btn-block" role="button">Назад</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

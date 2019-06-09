@@ -1,0 +1,33 @@
+﻿@model WebApp.Models.Group
+@{
+    ViewBag.Title = "Удаление группы";
+}
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Admin" asp-action="Index" asp-controller="Groups">Группы</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">@ViewBag.Title</div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Номер</th>
+                    <td>@Model.Name</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form asp-action="Delete" method="post">
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="Удалить" />
+        </div>
+        <a asp-action="Index" asp-area="Admin" asp-controller="Groups" class="btn btn-default btn-block" role="button">Назад</a>
+    </form>
+</div>

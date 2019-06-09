@@ -1,0 +1,74 @@
+﻿@model WebApp.Models.Question
+@{
+    ViewBag.Title = "Подробная информация";
+    IEnumerable<Answer> Answers = ViewBag.Answers;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Tests">Тесты</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-controller="Tests" asp-route-id="@Model.TestId">@Model.Test.Name</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">@ViewBag.Title</div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Название</th>
+                    <td>@Model.Description</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="padding-top: 15px;">Варианты ответов</th>
+                    <td>
+                        <table class="table table-hover table-striped">
+                            @foreach (var item in Answers)
+                            {
+                                <tr>
+                                    @if (item.Content != null)
+                                    {
+                                        @if (item.Content.Length <= 110)
+                                        {
+                                            <td style="border-top:none !important;">@item.Content</td>
+                                        }
+                                        else
+                                        {
+                                            <td style="border-top:none !important;">@item.Content.Substring(0, 110)...</td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td style="border-top:none !important"></td>
+                                    }
+                                    
+                                    <td style="border-top:none !important">
+                                        @item.Rightness
+                                    </td>
+                                        <td style="border-top:none !important">
+                                        <a asp-controller="Answers" asp-action="Edit" asp-route-id="@item.Id"><span class="glyphicon glyphicon-pencil"></span></a> |
+                                        <a asp-controller="Answers" asp-action="Details" asp-route-id="@item.Id"><span class="glyphicon glyphicon-question-sign"></span></a> |
+                                        <a asp-controller="Answers" asp-action="Delete" asp-route-id="@item.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </td>
+                                </tr>
+                            }
+                            <tr>
+                                <td style="border-top:none !important"><a class="btn btn-primary btn-sm" asp-controller="Answers" asp-area="Teacher" asp-action="Create" asp-route-id="@Model.Id" role="button">Добавить</a></td>
+                                <td style="border-top:none !important"></td>
+                                <td style="border-top:none !important"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group">
+        <a asp-action="Edit" class="btn btn-primary btn-block" asp-route-id="@Model.Id">Изменить вопрос</a>
+    </div>
+    <a asp-area="Teacher" asp-action="Details" asp-controller="Tests" asp-route-id="@Model.TestId" class="btn btn-default btn-block" role="button">Назад</a>
+</div>

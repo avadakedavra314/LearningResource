@@ -1,0 +1,31 @@
+﻿@model WebApp.Models.Test
+@{
+    ViewBag.Title = "Тест";
+
+    Question Question = ViewBag.Question;
+    IEnumerable<Answer> Answers = ViewBag.Answers;
+    Course Course = ViewBag.Course;
+    int NextQuestionId = ViewBag.NextQuestionId;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Student" asp-action="Index" asp-controller="Courses">Курсы</a></li>
+    <li><a asp-area="Student" asp-action="Index" asp-controller="Tests" asp-route-id="@Model.CourseId">Тесты по курсу "@Course.Name"</a></li>
+    <li class="active">@Model.Name</li>
+</ol>
+
+<div class="col-md-12">
+    <div class="thumbnail">
+        <div class="caption">
+            <h3 style="height:52px">@Question.Description</h3>
+            <hr />
+            <p></p>
+            @foreach (var a in Answers)
+            {
+                <a href="@Url.Action("Pass", "Tests", new { id = @Model.Id, q = NextQuestionId, a = a.Id }, null)" class="btn btn-primary" style="margin-bottom: 8px" role="button">@a.Content</a>
+            }
+            
+        </div>
+    </div>
+</div>

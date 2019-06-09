@@ -1,0 +1,35 @@
+﻿@model WebApp.Models.Question
+@{
+    ViewBag.Title = "Удаление вопроса";
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Tests">Тесты</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-controller="Tests" asp-route-id="@Model.TestId">@Model.Test.Name</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">@ViewBag.Title</div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Вопрос</th>
+                    <td>@Model.Description</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form asp-action="Delete" method="post">
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="Удалить" />
+        </div>
+        <a asp-area="Teacher" asp-action="Details" asp-controller="Tests" asp-route-id="@Model.TestId" class="btn btn-default btn-block" role="button">Назад</a>
+    </form>
+</div>

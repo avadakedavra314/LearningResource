@@ -1,0 +1,33 @@
+﻿@model WebApp.Models.Test
+@{
+    ViewBag.Title = "Создание теста";
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Tests">Тесты</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container-fluid">
+    <form asp-action="Create">
+        <div class="panel panel-primary">
+            <div class="panel-heading">@ViewBag.Title</div>
+            <div class="panel-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Название</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CourseId" class="control-label">Курс</label>
+                    <select asp-for="CourseId" class="form-control" asp-items="ViewBag.CourseId"></select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Создать" class="btn btn-primary btn-block" />
+        </div>
+        <a asp-action="Index" asp-area="Teacher" asp-controller="Tests" class="btn btn-default btn-block" role="button">Назад</a>
+    </form>
+</div>

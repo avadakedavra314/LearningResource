@@ -1,0 +1,43 @@
+﻿@model WebApp.Models.Answer
+@{
+    ViewBag.Title = "Подробная информация";
+    var question = ViewBag.question;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Tests">Тесты</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-route-id="@question.TestId" asp-controller="Tests">@question.Test.Name</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-controller="Questions" asp-route-id="@Model.QuestionId">Вопрос</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">@ViewBag.Title</div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Содержание</th>
+                    <td>@Model.Content</td>
+                </tr>
+                <tr>
+                    <th scope="row">Правильность</th>
+                    <td>@Model.Rightness</td>
+                </tr>
+                <tr>
+                    <th scope="row">Вопрос</th>
+                    <td>@Model.Question.Description</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group">
+        <a asp-action="Edit" class="btn btn-primary btn-block" asp-route-id="@Model.Id">Изменить</a>
+    </div>
+    <a asp-area="Teacher" asp-action="Details" asp-controller="Questions" asp-route-id="@Model.QuestionId" class="btn btn-default btn-block" role="button">Назад</a>
+</div>

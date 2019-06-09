@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApp.Models.User>
+@{
+    ViewData["Title"] = "Результаты группы";
+    var Group = ViewBag.Group;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Results">Группы</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container">
+    <h3 style="text-align:center">Группа @Group.Name</h3>
+    <h3 style="text-align:center">Выберите студента для просмотра результатов тестирования</h3>
+    <hr style="margin-bottom:30px;" />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail">
+                <div class="caption">
+                    @foreach (var user in Model)
+                    {
+                        <h3 style="height:20px"><a asp-area="Teacher" asp-controller="Results" asp-action="UserDetails" asp-route-id="@user.Id" role="button">@user.LastName @user.FirstName @user.Patronymic </a></h3>
+                        <hr />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

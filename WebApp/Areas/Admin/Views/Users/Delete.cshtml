@@ -1,0 +1,64 @@
+﻿@model WebApp.Models.User
+@{
+    ViewBag.Title = "Удаление пользователя";
+}
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Admin" asp-action="Index" asp-controller="Users">Пользователи</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">@ViewBag.Title</div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th scope="row">Имя</th>
+                    <td>@Model.FirstName</td>
+                </tr>
+                <tr>
+                    <th scope="row">Отчество</th>
+                    <td>@Model.Patronymic</td>
+                </tr>
+                <tr>
+                    <th scope="row">Фамилия</th>
+                    <td>@Model.LastName</td>
+                </tr>
+                <tr>
+                    <th scope="row">Информация</th>
+                    <td>@Model.About</td>
+                </tr>
+                <tr>
+                    <th scope="row">Фото</th>
+                    <td>@Model.Photo</td>
+                </tr>
+                <tr>
+                    <th scope="row">Логин</th>
+                    <td>@Model.Login</td>
+                </tr>
+                <tr>
+                    <th scope="row">Пароль</th>
+                    <td>@Model.Password</td>
+                </tr>
+                <tr>
+                    <th scope="row">Роль</th>
+                    <td>@Model.Role.Name</td>
+                </tr>
+                <tr>
+                    <th scope="row">№ группы</th>
+                    <td>@Model.Group.Name</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form asp-action="Delete" method="post">
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="Удалить" />
+        </div>
+        <a asp-action="Index" asp-area="Admin" asp-controller="Users" class="btn btn-default btn-block" role="button">Назад</a>
+    </form>
+</div>

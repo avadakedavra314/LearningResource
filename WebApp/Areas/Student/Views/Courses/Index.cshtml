@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApp.Models.Course>
+@{
+    ViewData["Title"] = "Курсы";
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container">
+    <h3 style="text-align:center">Пожалуйста, ознакомьтесь с нашими курсами</h3>
+    <hr style="margin-bottom:30px;" />
+    <div class="row">
+        @foreach (var course in Model)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3 style="height:52px">@course.Name</h3>
+                        <hr />
+                        <p style="height: 150px;">@course.Description</p>
+                        <p><a asp-area="Student" asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id" class="btn btn-primary" role="button">Лекции</a> <a asp-area="Student" asp-controller="Tests" asp-action="Index" asp-route-id="@course.Id" class="btn btn-default" role="button">Тесты</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

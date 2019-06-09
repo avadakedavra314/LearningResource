@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApp.Models.Result>
+@{
+    ViewBag.Title = "Результаты";
+    IEnumerable<Question> Questions = ViewBag.Questions;
+    var Group = ViewBag.Group;
+}
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Teacher" asp-action="Index" asp-controller="Results">Группы</a></li>
+    <li><a asp-area="Teacher" asp-action="Details" asp-route-id="@Group.Id" asp-controller="Results">Результаты группы</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            var count = Questions.Where(u => u.TestId == item.TestId).Count();
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h4 style="height:52px">@item.Test.Course.Name</h4>
+                        <h4 style="height:52px">@item.Test.Name</h4>
+                        <h3 style="height:52px">@item.Score / @count</h3>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

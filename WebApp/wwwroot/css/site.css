@@ -1,0 +1,168 @@
+﻿html, body {
+    height: 100%;
+}
+body {
+    padding-bottom: 20px;
+    padding: 50px 0 0 0;
+}
+
+/*Navmenu*/
+.navmenu, .navbar-offcanvas {
+    width: 250px;
+}
+
+.navmenu {
+    padding-top: 50px;
+}
+
+.navbar {
+    display: block;
+    text-align: center;
+}
+
+.navbar-brand {
+    display: inline-block;
+    float: none;
+}
+
+.navbar-toggle {
+    position: absolute;
+    float: left;
+    margin-left: 15px;
+}
+
+.container {
+    max-width: 100%;
+}
+
+@media (min-width: 1px) {
+    .navbar-toggle {
+        display: block !important;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding: 0 0 0 250px;
+    }
+
+    .navmenu {
+        padding-top: 0;
+    }
+
+    .navbar {
+        display: none !important; /* IE8 fix */
+    }
+}
+
+.navmenu-nav.dropdown-menu {
+    position: relative;
+}
+
+.dropdown-backdrop {
+    position: static;
+}
+/*!Navmenu*/
+
+.breadcrumb {
+    margin-top: 20px;
+    border-radius: 0px;
+}
+/* Panels */
+.panel-primary {
+    border-radius: 0px;
+}
+.panel-primary > .panel-heading {
+    border-radius: 0px;
+}
+.form-control {
+    border-radius: 0px;
+}
+
+/* Buttons */
+.btn-primary {
+    border-radius: 0px;
+    color:
+}
+.btn-default {
+    border-radius: 0px;
+}
+.btn-info {
+    border-radius: 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+textarea {
+    resize: none;
+}
+
+/*@media (min-width: 768px) {
+    .navbar-collapse {
+        height: auto;
+        border-top: 0;
+        box-shadow: none;
+        max-height: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar {
+        position:relative ;
+        max-width: 250px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .navbar-nav,
+    .navbar-nav > li,
+    .navbar-left,
+    .navbar-right,
+    .navbar-header {
+        float: none !important;
+    }
+
+    .navbar-right .dropdown-menu {
+        left: 0;
+        right: auto;
+    }
+
+    .navbar-collapse .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+    }
+}*/
+
+/*/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

@@ -1,0 +1,51 @@
+﻿@model WebApp.Models.Course
+@{
+    ViewBag.Title = "Лекции";
+    IEnumerable<Lecture> Lectures = ViewBag.Lectures;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li><a asp-area="Student" asp-action="Index" asp-controller="Courses">Курсы</a></li>
+    }
+    <li class="active">@Model.Name</li>
+</ol>
+
+<div class="container">
+    <h3 style="text-align:center">Лекции по курсу "@Model.Name"</h3>
+    <hr style="margin-bottom:30px;" />
+    <div class="row">
+        @foreach (var lecture in Lectures)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3 style="height:52px">@lecture.Name</h3>
+                        <hr />
+                        @if (lecture.Content != null)
+                        {
+                            @if (lecture.Content.Length <= 280)
+                            {
+                                <p style="height: 150px;">@lecture.Content</p>
+                            }
+                            else
+                            {
+                                <p style="height: 150px;">@lecture.Content.Substring(0,280)...</p>
+                            }
+
+                        }
+                        else
+                        {
+                            <p style="height: 150px;"></p>
+                        }
+                        <br />
+                        <p><a asp-area="Student" asp-controller="Lectures" asp-action="Index" asp-route-id="@lecture.Id" class="btn btn-primary" role="button">Подробнее</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

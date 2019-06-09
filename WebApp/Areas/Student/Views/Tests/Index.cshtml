@@ -1,0 +1,31 @@
+﻿@model WebApp.Models.Course
+@{
+    ViewBag.Title = "Тесты";
+    IEnumerable<Test> Tests = ViewBag.Tests;
+}
+
+<ol class="breadcrumb">
+    <li><a asp-area="" asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li><a asp-area="Student" asp-action="Index" asp-controller="Courses">Курсы</a></li>
+    <li class="active">Тесты по курсу "@Model.Name"</li>
+</ol>
+
+<div class="container">
+    <h3 style="text-align:center">Тесты по курсу "@Model.Name"</h3>
+    <hr style="margin-bottom:30px;" />
+    <div class="row">
+        @foreach (var test in Tests)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3 style="height:52px">@test.Name</h3>
+                        <hr />
+                        <p><a href="@Url.Action("Pass", "Tests", new { id = test.Id, q = 0, a = 100 }, null)" class="btn btn-primary" role="button">Пройти тест</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

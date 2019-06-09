@@ -1,0 +1,74 @@
+﻿@model WebApp.ViewModels.RegisterModel
+@{
+    ViewBag.Title = "Регистрация";
+}
+<ol class="breadcrumb">
+    <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+    <li class="active">@ViewBag.Title</li>
+</ol>
+<div class="panel panel-primary">
+    <div class="panel-heading">Регистрация</div>
+    <div class="panel-body">
+        <form class="form-horizontal" asp-action="Registration" asp-anti-forgery="true">
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Login" class="col-sm-2 control-label">Логин</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Login" class="form-control" placeholder="Введите Логин" />
+                    <span asp-validation-for="Login" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="col-sm-2 control-label">Пароль</label>
+                <div class="col-sm-10">
+                    <input asp-for="Password" class="form-control" placeholder="Введите Пароль" />
+                    <span asp-validation-for="Password" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="col-sm-2 control-label">Подтвердите Пароль</label>
+                <div class="col-sm-10">
+                    <input asp-for="ConfirmPassword" class="form-control" placeholder="Подтверждения Пароля" />
+                    <span asp-validation-for="ConfirmPassword" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="col-sm-2 control-label">Имя</label>
+                <div class="col-sm-10">
+                    <input asp-for="FirstName" class="form-control" placeholder="Введите Имя" />
+                    <span asp-validation-for="FirstName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="col-sm-2 control-label">Фамилия</label>
+                <div class="col-sm-10">
+                    <input asp-for="LastName" class="form-control" placeholder="Введите Фамилию" />
+                    <span asp-validation-for="LastName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patronymic" class="col-sm-2 control-label">Отчество</label>
+                <div class="col-sm-10">
+                    <input asp-for="Patronymic" class="form-control" placeholder="Введите Отчество" />
+                    <span asp-validation-for="Patronymic" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="GroupId" class="col-sm-2 control-label">Номер группы</label>
+                <div class="col-sm-10">                                                             
+                    <select asp-for="GroupId" class="form-control" asp-items="ViewBag.GroupId"></select>
+                    <span asp-validation-for="GroupId" />                                      
+                </div>                 
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Регистрация</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
